@@ -1,0 +1,65 @@
+/*
+============================================================
+2016/04/23 作成
+============================================================
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #222;
+    background-image: url(../images/background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*
+------------------------------------------------------------
+トップページ
+------------------------------------------------------------
+*/
+div.content {
+    margin: 0px auto;
+    text-align: center;
+}
+
+h1#title {
+    color: #EEE;
+    text-shadow: 1px 1px 3px #000;
+    font-size: 72pt;
+    font-family: "SpaceClaim ISO CB";
+    margin-top: 200px;
+}
+
+ul.top-menu {
+    position: relative;
+    list-style: none;
+    margin-top: 50px;
+    left: 50%;
+    float: left;
+}
+
+ul.top-menu li {
+    position: relative;
+    left: -50%;
+    float: left;
+    font-size: 20pt;
+    font-family: "Meiryo" "MS PMincho";
+    margin: 0px 20px;
+}
+
+ul.top-menu li a {
+    color: #EEE;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+    padding: 10px 30px;
+    border: 2px #EEE solid;
+    transition: background-color 0.2s;
+}
+
+ul.top-menu li a:hover {
+    background-color: #EEE;
+}
