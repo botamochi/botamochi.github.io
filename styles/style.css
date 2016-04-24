@@ -6,6 +6,8 @@
 * {
     margin: 0px;
     padding: 0px;
+    color: #333;
+    font-family: "MS PMincho";
 }
 
 html {
@@ -47,7 +49,6 @@ ul.top-menu li {
     left: -50%;
     float: left;
     font-size: 20pt;
-    font-family: "Meiryo";
     margin: 0px 20px;
 }
 
@@ -58,9 +59,78 @@ ul.top-menu li a {
     text-shadow: 1px 1px 1px #000;
     padding: 10px 30px;
     border: 2px #EEE solid;
+    border-radius: 3px;
     transition: background-color 0.2s;
 }
 
 ul.top-menu li a:hover {
     background-color: #EEE;
+}
+
+/*
+------------------------------------------------------------
+コンテンツ
+------------------------------------------------------------
+*/
+.wrapper {
+    width: 80%;
+    min-width: 800px;
+    height: 100%;
+    margin: 0px auto;
+    background-image: url(../images/tile.png);
+}
+
+.content {
+    float: left;
+    width: 75%;
+    min-height: 200px;
+}
+
+.content div {
+    margin: 10px 0px 10px 10px;
+    padding: 20px;
+    text-align: left;
+    background-color: #DDD;
+    border-radius: 5px;
+}
+
+.content h1 {
+    font-size: 32pt;
+}
+
+.content h2 {
+    font-size: 20pt;
+}
+
+.content p {
+    font-size: 11pt;
+    line-height: 16pt;
+    margin: 10px 10px 30px 10px;
+}
+
+.content hr {
+    margin: 20px 0px;
+}
+
+.side-menu {
+    float: left;
+    width: 25%;
+    min-height: 200px;
+}
+
+.side-menu ul {
+    list-style: none;
+    margin: 10px;
+    padding: 20px 0px;
+    background-color: #DDD;
+    border-radius: 5px;
+}
+
+.side-menu ul li {
+    margin-bottom: 20px;
+}
+
+.side-menu ul li a {
+    color: #333;
+    font-size: 11pt;
 }
