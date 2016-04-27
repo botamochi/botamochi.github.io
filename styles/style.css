@@ -49,11 +49,11 @@ body {
 ul.top-menu {
     position: relative;
     list-style: none;
-    width: 600px;
+    width: 610px;
     margin: 50px auto 0px auto;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-device-width: 480px) {
     ul.top-menu li {
 	position: relative;
 	font-size: 20pt;
@@ -61,7 +61,7 @@ ul.top-menu {
 	margin: 0px 20px;
     }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-device-width: 480px) {
     ul.top-menu li {
 	position: relative;
 	font-size: 20pt;
