@@ -77,7 +77,7 @@ ul.top-menu li a:hover {
 .wrapper {
     width: 80%;
     min-width: 800px;
-    height: 100%;
+    min-height: 100%;
     margin: 0px auto;
     background-image: url(../images/tile.png);
 }
@@ -104,14 +104,29 @@ ul.top-menu li a:hover {
     font-size: 20pt;
 }
 
+.content h3 {
+    font-size: 18pt;
+    margin: 10px 0px;
+    padding: 3px 5px;
+    border-left: 8px #666 solid;
+    border-bottom: 3px #666 solid;
+}
+
 .content p {
-    font-size: 11pt;
-    line-height: 16pt;
+    font-size: 12pt;
+    line-height: 20pt;
     margin: 10px 10px 30px 10px;
 }
 
 .content hr {
     margin: 20px 0px;
+}
+
+.date {
+    display: block;
+    font-size: 10pt;
+    text-align: right;
+    margin-top: 5px;
 }
 
 .side-menu {
@@ -135,4 +150,8 @@ ul.top-menu li a:hover {
 .side-menu ul li a {
     color: #333;
     font-size: 11pt;
+}
+
+.clear {
+    clear: both;
 }
