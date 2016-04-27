@@ -20,7 +20,6 @@ body {
     height: 100%;
     background-image: url(../images/background.jpg);
     background-size: 100%;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
 }
@@ -30,8 +29,17 @@ body {
 トップページ
 ------------------------------------------------------------
 */
-h1.top-title {
-    padding-top: 200px;
+.top-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    height: 250px;
+}
+
+.top-title {
     color: #EEE;
     text-shadow: 1px 1px 3px #000;
     font-size: 72pt;
@@ -41,14 +49,12 @@ h1.top-title {
 ul.top-menu {
     position: relative;
     list-style: none;
-    margin-top: 50px;
-    left: 50%;
-    float: left;
+    width: 600px;
+    margin: 50px auto 0px auto;
 }
 
 ul.top-menu li {
     position: relative;
-    left: -50%;
     float: left;
     font-size: 20pt;
     margin: 0px 20px;
@@ -115,6 +121,7 @@ ul.top-menu li a:hover {
 .content p {
     font-size: 12pt;
     line-height: 20pt;
+    text-indent: 1em;
     margin: 10px 10px 30px 10px;
 }
 
