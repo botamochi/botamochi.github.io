@@ -53,11 +53,25 @@ ul.top-menu {
     margin: 50px auto 0px auto;
 }
 
-ul.top-menu li {
-    position: relative;
-    float: left;
-    font-size: 20pt;
-    margin: 0px 20px;
+@media screen and (min-width: 700px) {
+    ul.top-menu li {
+	position: relative;
+	font-size: 20pt;
+	float: left;
+	margin: 0px 20px;
+    }
+}
+@media screen and (max-width: 700px) {
+    ul.top-menu li {
+	position: relative;
+	font-size: 20pt;
+	margin: 50px 0px;
+    }
+    ul.top-menu li a {
+	display: block;
+	width: 200px;
+	margin: 0px auto;
+    }
 }
 
 ul.top-menu li a {
@@ -103,7 +117,7 @@ ul.top-menu li a:hover {
 }
 
 .content h1 {
-    font-size: 32pt;
+    font-size: 28pt;
 }
 
 .content h2 {
