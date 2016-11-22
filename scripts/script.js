@@ -36,7 +36,7 @@ window.onload = function()
 	ul2.appendChild(li21);
 	var li22 = document.createElement("li");
 	var a22 = document.createElement("a");
-	a22.setAttribute("href", path + "#");
+	a22.setAttribute("href", path + "creation/irdigimon.html");
 	a22.innerHTML = "初代ギア無線化回路";
 	li22.appendChild(a22);
 	ul2.appendChild(li22);
