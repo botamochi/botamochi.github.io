@@ -143,6 +143,14 @@ ul.top-menu li a:hover {
     margin: 10px 10px 10px 10px;
 }
 
+.content ul {
+    margin-left: 20px;
+}
+
+.content ul li {
+    margin: 10px;
+}
+
 .content img {
     margin: 10px;
 }

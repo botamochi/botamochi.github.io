@@ -42,7 +42,7 @@ window.onload = function()
 	ul2.appendChild(li22);
 	var li23 = document.createElement("li");
 	var a23 = document.createElement("a");
-	a23.setAttribute("href", path + "#");
+	a23.setAttribute("href", path + "creation/taberumon.html");
 	a23.innerHTML = "デジモンデスクトップアクセサリ";
 	li23.appendChild(a23);
 	ul2.appendChild(li23);
