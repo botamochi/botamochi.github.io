@@ -108,7 +108,7 @@ ul.top-menu li a:hover {
     min-height: 200px;
 }
 
-.content div {
+.content > div {
     margin: 10px 0px 10px 10px;
     padding: 20px;
     text-align: left;
@@ -191,4 +191,8 @@ ul.top-menu li a:hover {
 
 .clear {
     clear: both;
+}
+
+.syntaxhighlighter {
+    padding: 5px 0px;
 }

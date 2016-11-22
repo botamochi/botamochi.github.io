@@ -5,8 +5,12 @@
     <title>D-Link(通信規格)</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="stylesheet" type="text/css" href="../../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/shCoreDefault.css">
     <script>pagetype="analysis";path="../";</script>
     <script src="../../scripts/script.js"></script>
+    <script src="../../scripts/shCore.js"></script>
+    <script src="../../scripts/shBrushCpp.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
   </head>
   <body>
     <div class="wrapper">
@@ -74,10 +78,78 @@
 	  <p>
 	    D-LinkではパルスのHighの長さで"0"、"1"の情報を送信します。
 	    Highの時間が長ければ"1"、短かければ"0"となり、HighとLowの時間を合計したパルスの長さは必ず4msとなります。
+	    ちょうどHeadパルスのHighの時間より長いか短いかで区別することができます。
 	    フレームのデータサイズは16bitなので、このデータパルスが16個連続して送信されます。
 	    また、データはLSB(最下位ビット)から順に送信されます。
 	  </p>
 	  <img src="dlink/data-pulse.png">
+	  <br><br>
+	  <p>
+	    下にArduinoにおけるプログラムの例を載せておきます。
+	    ただし、ArduinoのIOは5V出力なので、3Vで駆動している液晶ゲームに直接つなげることはできません。
+	    送信では、単純にdigitalWrite関数と遅延関数を用いて信号を生成します。
+	  </p>
+	  <h4>Arduinoでの送信プログラム</h4>
+	  <pre class="brush: cpp;">
+void dlinkSend(word frame)
+{
+  // Start
+  digitalWrite(outPin, LOW);
+  delay(60);
+
+  // Head
+  digitalWrite(outPin, HIGH);
+  delayMicroseconds(2000);
+  digitalWrite(outPin, LOW);
+  delayMicroseconds(1000);
+
+  // Data
+  for (int i = 0; i &lt; 16; i++) {
+    if (frame &amp; (1 &lt;&lt; i)) {
+      digitalWrite(outPin, HIGH);
+      delayMicroseconds(2500);
+      digitalWrite(outPin, LOW);
+      delayMicroseconds(1500);
+    } else {
+      digitalWrite(outPin, HIGH);
+      delayMicroseconds(1000);
+      digitalWrite(outPin, LOW);
+      delayMicroseconds(3000);
+    }
+  }
+  digitalWrite(outPin, HIGH);
+}</pre>
+	  <br>
+	  <p>
+	    受信ではpulseIn関数を使用してHigh時間を計測しています。
+	    まず、HeadパルスのHigh時間を計測し、Dataパルスの読み取り時は、その時間より長いか短いかで"0"、"1"を判別しています。
+	    これにより、受信では時間に関する定数が出てきません。
+	  </p>
+	  <h4>Arduinoでの受信プログラム</h4>
+	  <pre class="brush: cpp;">
+word dlinkRecv()
+{
+  word frame;
+  unsigned long w, thr;
+
+  // Startが来るまで待機
+  while (digitalRead(inPin) == HIGH);
+
+  // Head
+  thr = pulseIn(inPin, HIGH);
+
+  // Data
+  for (int i = 0; i &lt; 16; i++) {
+    w = pulseIn(inPin, HIGH);
+    if (w > thr) {
+      frame |= (1 &lt;&lt; i);
+    }
+  }
+  // Dataの最後のLowが終了するまで待機
+  while (digitalRead(inPin) == LOW);
+
+  return frame;
+}</pre>
 	  <!-------------------- ここまで -------------------->
 	  <hr>
 	</div>
