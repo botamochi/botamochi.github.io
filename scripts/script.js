@@ -30,28 +30,36 @@ window.onload = function()
     if (pagetype == "creation") {
 	var li21 = document.createElement("li");
 	var a21 = document.createElement("a");
-	a21.setAttribute("href", path + "#");
-	a21.innerHTML = "初代ギア用サンドバッグ";
+	a21.setAttribute("href", path + "creation/taberumon.html");
+	a21.innerHTML = "デジモンデスクトップアクセサリ";
 	li21.appendChild(a21);
-	ul2.appendChild(li21);
 	var li22 = document.createElement("li");
 	var a22 = document.createElement("a");
 	a22.setAttribute("href", path + "creation/irdigimon.html");
 	a22.innerHTML = "初代ギア無線化回路";
 	li22.appendChild(a22);
-	ul2.appendChild(li22);
 	var li23 = document.createElement("li");
 	var a23 = document.createElement("a");
-	a23.setAttribute("href", path + "creation/taberumon.html");
-	a23.innerHTML = "デジモンデスクトップアクセサリ";
+	a23.setAttribute("href", path + "#");
+	a23.innerHTML = "初代ギア用サンドバッグ";
 	li23.appendChild(a23);
+	// 追加
 	ul2.appendChild(li23);
+	ul2.appendChild(li22);
+	ul2.appendChild(li21);
     } else if (pagetype == "analysis") {
 	var li21 = document.createElement("li");
 	var a21 = document.createElement("a");
 	a21.setAttribute("href", path + "analysis/dlink.html");
 	a21.innerHTML = "D-Link";
 	li21.appendChild(a21);
+	var li22 = document.createElement("li");
+	var a22 = document.createElement("a");
+	a22.setAttribute("href", path + "analysis/origin.html");
+	a22.innerHTML = "初代デジタルモンスター";
+	li22.appendChild(a22);
+	// 追加
+	ul2.appendChild(li22);
 	ul2.appendChild(li21);
     }
     menu.appendChild(ul2);
