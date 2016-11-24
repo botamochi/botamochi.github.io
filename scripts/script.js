@@ -6,61 +6,25 @@ window.onload = function()
     menu.classList.add("side-menu");
     // コンテンツ
     var ul1 = document.createElement("ul");
-    var li11 = document.createElement("li");
-    var a11 = document.createElement("a");
-    a11.setAttribute("href", path + "../index.html");
-    a11.innerHTML = "HOME";
-    li11.appendChild(a11);
-    ul1.appendChild(li11);
-    var li12 = document.createElement("li");
-    var a12 = document.createElement("a");
-    a12.setAttribute("href", path + "analysis.html");
-    a12.innerHTML = "解析データ";
-    li12.appendChild(a12);
-    ul1.appendChild(li12);
-    var li13 = document.createElement("li");
-    var a13 = document.createElement("a");
-    a13.setAttribute("href", path + "creation.html");
-    a13.innerHTML = "制作物"
-    li13.appendChild(a13);
-    ul1.appendChild(li13);
+    ul1.innerHTML = '<li><b>&lt;&lt; MENU &gt;&gt;</b>';
+    ul1.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
+    ul1.innerHTML += '<li><a href="' + path + '../index.html">HOME</a></li>';
+    ul1.innerHTML += '<li><a href="' + path + 'analysis.html">解析データ</a></li>';
+    ul1.innerHTML += '<li><a href="' + path + 'creation.html">制作物</a></li>';
     menu.appendChild(ul1);
     // 記事のリスト
     var ul2 = document.createElement("ul");
     if (pagetype == "creation") {
-	var li21 = document.createElement("li");
-	var a21 = document.createElement("a");
-	a21.setAttribute("href", path + "creation/taberumon.html");
-	a21.innerHTML = "デジモンデスクトップアクセサリ";
-	li21.appendChild(a21);
-	var li22 = document.createElement("li");
-	var a22 = document.createElement("a");
-	a22.setAttribute("href", path + "creation/irdigimon.html");
-	a22.innerHTML = "初代ギア無線化回路";
-	li22.appendChild(a22);
-	var li23 = document.createElement("li");
-	var a23 = document.createElement("a");
-	a23.setAttribute("href", path + "#");
-	a23.innerHTML = "初代ギア用サンドバッグ";
-	li23.appendChild(a23);
-	// 追加
-	ul2.appendChild(li23);
-	ul2.appendChild(li22);
-	ul2.appendChild(li21);
+	ul2.innerHTML = '<li><b>&lt;&lt; 制作物一覧 &gt;&gt;</b>';
+	ul2.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
+	ul2.innerHTML += '<li><a href="' + path + '#">初代ギア用サンドバッグ</a></li>';
+	ul2.innerHTML += '<li><a href="' + path + 'creation/irdigimon.html">初代ギア無線化回路</a></li>';
+	ul2.innerHTML += '<li><a href="' + path + 'creation/taberumon.html">デスクトップアクセサリ</a></li>';
     } else if (pagetype == "analysis") {
-	var li21 = document.createElement("li");
-	var a21 = document.createElement("a");
-	a21.setAttribute("href", path + "analysis/dlink.html");
-	a21.innerHTML = "D-Link";
-	li21.appendChild(a21);
-	var li22 = document.createElement("li");
-	var a22 = document.createElement("a");
-	a22.setAttribute("href", path + "analysis/origin.html");
-	a22.innerHTML = "初代デジタルモンスター";
-	li22.appendChild(a22);
-	// 追加
-	ul2.appendChild(li22);
-	ul2.appendChild(li21);
+	ul2.innerHTML = '<li><b>&lt;&lt; 解析データ一覧 &gt;&gt;</b>';
+	ul2.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
+	ul2.innerHTML += '<li><a href="' + path + 'analysis/origin.html">初代デジタルモンスター</a></li>';
+	ul2.innerHTML += '<li><a href="' + path + 'analysis/dlink.html">D-Link</a></li>';
     }
     menu.appendChild(ul2);
 
