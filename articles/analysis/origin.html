@@ -5,8 +5,12 @@
     <title>初代「デジタルモンスター」の通信</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="stylesheet" type="text/css" href="../../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/shCoreDefault.css">
     <script>pagetype="analysis";path="../";</script>
     <script src="../../scripts/script.js"></script>
+    <script src="../../scripts/shCore.js"></script>
+    <script src="../../scripts/shBrushCpp.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
   </head>
   <body>
     <div class="wrapper">
@@ -15,9 +19,23 @@
 	  <h1>初代「デジタルモンスター」の通信</h1>
 	  <br>
 	  <span class="date">記事作成 : 2016/11/24(木)</span>
-	  <span class="date">最終更新 : 2016/11/24(木)</span>
+	  <span class="date">最終更新 : 2016/11/25(金)</span>
 	  <hr>
 	  <!-------------------- 記事内容 -------------------->
+	  <h3>はじめに</h3>
+	  <p>
+	    ここでは「デジタルモンスター」の原点である初代育成ギアの通信について解説します。
+	    初代育成ギアの通信はD-Linkを使用するすべてのギアが対応していますので、
+	    この通信形式だけ理解しておけば多くのギアとバトルできる回路を作ることができます。
+	  </p>
+	  <p>
+	    一応、バトルの形式について説明しておきますが、初代育成ギアではバトルはオートで行われます。
+	    以降のギアでは一般的となるバトル中のHPといった概念もなく、結果は勝ちか負けかの2パターンのみです。
+	    さらには、攻撃のドットも全てのバージョンで変化がありません(一部変化するデジモンもいますが)。
+	    このことからも、通信に必要なデータ量は相当少なくて済むことが分かります。
+	    通信解析の入門としてもまさに打って付けといった感じです。
+	  </p>
+	  <br><br>
 	  <h3>通信の流れ</h3>
 	  <p>
 	    育成ギアの通信は下の図に示すようにフレームを交互に送信することで行われます。
@@ -97,6 +115,45 @@
 	    例えば、バージョン1とバージョン4が対戦する場合、バージョン4が通信を開始すると、バージョン1のここのフィールドは"0011"になります。
 	    なぜこのような仕様なのかは不明です。
 	  </p>
+	  <br><br>
+	  <h3>プログラム</h3>
+	  <p>
+	    文章で説明するより、プログラムを見た方が分かりやすいという人も多いと思いますので、
+	    下にArduinoで対戦をするサンプルの一部を載せておきます。
+	    このサンプルでは育成ギア側がフレームを送信することで通信を開始します。
+	    勝敗についても育成ギア側が処理して送ってくるので、Arduino側はそれと反対のものを送信するだけ済みます。
+	    15行目と25行目が冗長ビットを付与して送信するフレームを生成する処理です。
+	    データをビット反転し、それを左に8ビットシフトすることで冗長ビットを生成しています。
+	  </p>
+	  <h4>Arduinoでバトルするサンプルプログラム(loop部分のみ)</h4>
+	  <pre class="brush: cpp;">
+loop()
+{
+  byte position = 0b0011; // アグモン
+  byte effort   = 0b0000; // 努力値0
+  byte result;
+  byte version  = 0b0000; // バージョン1
+  word dat1, dat2;
+  word sFrame1, sFrame2;
+  word rFrame1, rFrame2;
+  
+  rFrame1 = dlinkRecv();  // 第1フレーム受信
+  // 第1フレーム生成
+  dat1 = (effort &lt;&lt; 4) | position;
+  sFrame1 = (~dat1 &lt;&lt; 8) | dat1;
+  dlinkSend(sFrame1);     // 第1フレーム送信
+  rFrame2 = dlinkRecv();  // 第2フレーム受信
+  // 勝敗を設定
+  if ((rFrame2 & 0b11) == 0b01) {
+    result = 0b10;
+  } else {
+    result = 0b01;
+  }
+  // 第2フレーム生成
+  dat2 = (version &lt;&lt; 4) | result;
+  sFrame2 = (~dat2 &lt;&lt; 8) | dat2;
+  dlinkSend(sFrame2);     // 第2フレーム送信
+}</pre>
 	  <!-------------------- ここまで -------------------->
 	  <hr>
 	</div>
