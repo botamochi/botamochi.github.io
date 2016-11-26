@@ -8,9 +8,10 @@ window.onload = function()
     var ul1 = document.createElement("ul");
     ul1.innerHTML = '<li><b>&lt;&lt; MENU &gt;&gt;</b>';
     ul1.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
-    ul1.innerHTML += '<li><a href="' + path + '../index.html">HOME</a></li>';
+    ul1.innerHTML += '<li><a href="' + path + '../index.html">TOP</a></li>';
     ul1.innerHTML += '<li><a href="' + path + 'analysis.html">解析データ</a></li>';
     ul1.innerHTML += '<li><a href="' + path + 'creation.html">制作物</a></li>';
+    ul1.innerHTML += '<li><a href="http://blogs.yahoo.co.jp/nazonootokoj" target="blank_">ブログ</a></li>'
     menu.appendChild(ul1);
     // 記事のリスト
     var ul2 = document.createElement("ul");
