@@ -1,7 +1,7 @@
 window.onload = function()
 {
     // 横のメニューを追加
-    var div = document.getElementsByClassName("wrapper")[0];
+    var wrapDiv = document.getElementsByClassName("wrapper")[0];
     var menu = document.createElement("div");
     menu.classList.add("side-menu");
     // コンテンツ
@@ -30,6 +30,16 @@ window.onload = function()
 
     var clr = document.createElement("div");
     clr.classList.add("clear");
-    div.appendChild(menu);
-    div.appendChild(clr);
+    wrapDiv.appendChild(menu);
+    wrapDiv.appendChild(clr);
+    // 戻るリンクを追加
+    var mainDiv = document.getElementsByClassName("main")[0];
+    var retDiv = document.createElement("div");
+    retDiv.style.textAlign = "center";
+    if (pagetype == "creation") {
+	retDiv.innerHTML = '&lt;&lt; <a href="../creation.html">戻る</a> &gt;&gt;';
+    } else if (pagetype == "analysis") {
+	retDiv.innerHTML = '&lt;&lt; <a href="../analysis.html">戻る</a> &gt;&gt;';
+    }
+    mainDiv.appendChild(retDiv);
 }
