@@ -17,8 +17,8 @@ window.onload = function()
     if (pagetype == "creation") {
 	ul2.innerHTML = '<li><b>&lt;&lt; 制作物リスト &gt;&gt;</b>';
 	ul2.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
-	ul2.innerHTML += '<li><a href="http://blogs.yahoo.co.jp/nazonootokoj/19982699.html">初代ギア用サンドバッグ</a></li>';
-	ul2.innerHTML += '<li><a href="' + path + 'creation/irdigimon.html">初代ギア無線化回路</a></li>';
+	ul2.innerHTML += '<li><a href="http://blogs.yahoo.co.jp/nazonootokoj/19982699.html">初代育成ギア用サンドバッグ</a></li>';
+	ul2.innerHTML += '<li><a href="' + path + 'creation/irdigimon.html">初代育成ギア無線化回路</a></li>';
 	ul2.innerHTML += '<li><a href="' + path + 'creation/taberumon.html">デスクトップアクセサリ</a></li>';
     } else if (pagetype == "analysis") {
 	ul2.innerHTML = '<li><b>&lt;&lt; 解析データリスト &gt;&gt;</b>';
