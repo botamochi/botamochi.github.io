@@ -1,4 +1,4 @@
-window.onload = function()
+document.addEventListener( 'DOMContentLoaded', function()
 {
     // 横のメニューを追加
     var wrapDiv = document.getElementsByClassName("wrapper")[0];
@@ -43,4 +43,4 @@ window.onload = function()
 	retDiv.innerHTML = '&lt;&lt; <a href="../analysis.html">戻る</a> &gt;&gt;';
     }
     mainDiv.appendChild(retDiv);
-}
+}, false);
