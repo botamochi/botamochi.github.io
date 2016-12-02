@@ -18,6 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function()
     if (pagetype == "creation") {
 	ul2.innerHTML = '<li><b>&lt;&lt; 制作物リスト &gt;&gt;</b>';
 	ul2.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
+	ul2.innerHTML += '<li><a href="' + path + 'creation/sandbag2.html">簡易サンドバッグの作り方</a></li>';
 	ul2.innerHTML += '<li><a href="' + path + 'creation/sandbag.html">初代育成ギア用サンドバッグ</a></li>';
 	ul2.innerHTML += '<li><a href="' + path + 'creation/irdigimon.html">初代育成ギア無線化回路</a></li>';
 	ul2.innerHTML += '<li><a href="' + path + 'creation/taberumon.html">デスクトップアクセサリ</a></li>';
