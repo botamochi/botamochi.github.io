@@ -25,6 +25,7 @@ document.addEventListener( 'DOMContentLoaded', function()
     } else if (pagetype == "analysis") {
 	ul2.innerHTML = '<li><b>&lt;&lt; 解析データリスト &gt;&gt;</b>';
 	ul2.innerHTML += '<hr style="margin: 0px 10px 20px 10px;">';
+	ul2.innerHTML += '<li><a href="' + path + 'analysis/pendulum.html">デジモンペンデュラム</a></li>';
 	ul2.innerHTML += '<li><a href="' + path + 'analysis/origin.html">初代デジタルモンスター</a></li>';
 	ul2.innerHTML += '<li><a href="' + path + 'analysis/dlink.html">D-Link</a></li>';
     }
