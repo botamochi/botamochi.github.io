@@ -1,0 +1,62 @@
+/*
+============================================================
+スマホ用のスタイルシート
+作成 : 2016/12/21
+============================================================
+*/
+
+body {
+    color: #DDD;
+    background-color: #222;
+}
+
+/*
+------------------------------------------------------------
+トップページの要素
+------------------------------------------------------------
+*/
+.top-bar {
+    width: 100%;
+    height: 30px;
+    border-bottom: 3px #EEE solid;
+}
+.top-img {
+    width: 100%;
+    border-bottom: 3px #EEE solid;
+}
+.top-title {
+    padding: 20px 0px;
+    width: 100%;
+    border-bottom: 3px #EEE solid;
+}
+.top-title h1 {
+    font-size: 42pt;
+}
+ul.top-menu {
+    list-style: none;
+    font-size: 16pt;
+}
+ul.top-menu li a {
+    display: block;
+    color: #DDD;
+    padding: 20px 0px;
+    text-decoration: none;
+    background-color: #888;
+    border-bottom: 3px #EEE solid;
+}
+p.top-caution {
+    margin: 10px 20px;
+/*
+------------------------------------------------------------
+各記事の要素
+------------------------------------------------------------
+*/
+.wrapper {
+    width: 100%;
+}
+.content {
+    width: 100%;
+}
+.side-menu {
+    display: none;
+}

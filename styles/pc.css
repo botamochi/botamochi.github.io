@@ -1,0 +1,75 @@
+/*
+============================================================
+PC用のスタイルシート
+作成 : 2016/12/21
+============================================================
+*/
+
+.mobile-only {
+    display: none;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+/*
+------------------------------------------------------------
+トップページの要素
+------------------------------------------------------------
+*/
+.top-title h1 {
+    color: #EEE;
+    font-size: 72pt;
+}
+.top-wrapper {
+    height: 250px;
+}
+ul.top-menu {
+    position: relative;
+    list-style: none;
+    width: 610px;
+    margin: 50px auto 0px auto;
+}
+ul.top-menu li {
+    position: relative;
+    font-size: 20pt;
+    float: left;
+    margin: 0px 20px;
+}
+ul.top-menu li a {
+    width: 200px;
+    padding: 10px 30px;
+    color: #EEE;
+    border: 2px #EEE solid;
+    text-decoration: none;
+}
+ul.top-menu li a {
+    position: relative;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+ul.top-menu li a:hover {
+    background-color: #EEE;
+}
+
+/*
+------------------------------------------------------------
+各記事の要素
+------------------------------------------------------------
+*/
+.wrapper {
+    width: 80%;
+    min-width: 800px;
+    min-height: 100%;
+    margin: 0px auto;
+}
+
+.content {
+    float: left;
+    width: 75%;
+}
