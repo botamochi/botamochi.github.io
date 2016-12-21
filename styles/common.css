@@ -154,11 +154,7 @@ html,body {
 }
 
 .pendulum-attack-dot-list {
-    margin-left: 30px;
     text-align: center;
-}
-.pendulum-attack-dot-list th {
-    min-width: 100px;
 }
 .pendulum-attack-dot-list img {
     width: 16px;

@@ -73,3 +73,12 @@ ul.top-menu li a:hover {
     float: left;
     width: 75%;
 }
+.content table {
+    margin: 30px;
+}
+.pendulum-attack-dot-list {
+    margin-left: 30px;
+}
+.pendulum-attack-dot-list th {
+    min-width: 100px;
+}

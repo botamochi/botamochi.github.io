@@ -4,6 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function()
     var wrapDiv = document.getElementsByClassName("wrapper")[0];
     var menu = document.createElement("div");
     menu.classList.add("side-menu");
+    menu.classList.add("pc-only");
     // コンテンツ
     var ul1 = document.createElement("ul");
     ul1.innerHTML = '<li><b>&lt;&lt; MENU &gt;&gt;</b>';
